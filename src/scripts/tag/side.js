@@ -1,11 +1,11 @@
 import { h } from 'preact';
-import Square from './square';
-import { names } from '../shared';
+import { all, bgc, names } from '../shared';
 
-export default ({ color }) => (
-	<nav id="side">
-		{ names.map(s =>
-			<Square color={ s } active={ s === color } />
-		) }
-	</nav>
-);
+export default ({ color }) =>
+	h('nav', {id: 'side'}, [
+		names.map(name => h('a', {
+			href: `#/${name}`,
+			className: (name === color) ? 'active' : '',
+			style: bgc( all[name]['500'] )
+		}))
+	]);
