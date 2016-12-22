@@ -3,7 +3,7 @@ export const doc = document;
 export const loc = win.location;
 export const nav = win.navigator;
 
-export const bgc = str => `background-color: ${str}`;
+export const bgc = str => `background-color: ${str};`;
 
 export const all = {
 	red: {

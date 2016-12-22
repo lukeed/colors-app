@@ -13,6 +13,12 @@ export function hex2rgb(hex) {
 	return [num >> 16, num >> 8 & 255, num & 255];
 }
 
+export function isDark(rgb) {
+  return Math.round(
+		((parseInt(rgb[0]) * 299) + (parseInt(rgb[1]) * 587) + (parseInt(rgb[2]) * 114)) / 1000
+	) <= 140;
+}
+
 /**
  * `colr-convert`
  * @see https://github.com/stayradiated/colr-convert

@@ -1,10 +1,12 @@
 import { h } from 'preact';
 import { all, bgc } from '../shared';
-import { hex2rgb, rgb2hsl } from '../convert';
+// import { hex2rgb, rgb2hsl, isLight } from '../convert';
+import { hex2rgb, isDark } from '../convert';
 
 const Row = ({idx, hex}) => {
 	const rgb = hex2rgb(hex);
-	const hsl = rgb2hsl(rgb);
+	let style = bgc(hex);
+	isDark(rgb) && (style += 'color:white;');
 
 	return (
 		<li style={ style }>
