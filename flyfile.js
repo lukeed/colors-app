@@ -51,6 +51,8 @@ export async function release() {
 	await this.source(`${tar}/**/*`).rev({
 		ignores: ['.html', '.png', '.svg', '.ico', '.json', '.txt']
 	}).revManifest({dest: rel, trim: tar}).revReplace().target(rel);
+	// minify html
+	await this.source(`${rel}/*.html`).htmlmin().target(rel);
 	// make assets available for offline
 	await this.source(`${rel}/**/*`).precache({
 		stripPrefix: rel,

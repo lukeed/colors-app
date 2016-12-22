@@ -30,6 +30,7 @@
     "fly": "beta",
     "fly-autoprefixer": "^1.0.0",
     "fly-esnext": "^2.0.0",
+    "fly-htmlmin": "^2.0.1",
     "fly-precache": "^2.0.1",
     "fly-rev": "^2.1.0",
     "fly-rollup": "frantic1048/fly-rollup",
