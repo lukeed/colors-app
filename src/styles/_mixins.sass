@@ -2,13 +2,6 @@
  * Mixins / Helpers
  */
 
-=fill
-	position: absolute
-	height: 100%
-	width: 100%
-	left: 0
-	top: 0
-
 =scroll
 	overflow: auto
 	overflow-scrolling: touch
@@ -21,3 +14,9 @@
 	-moz-osx-font-smoothing: grayscale
 	-webkit-font-smoothing: antialiased
 	text-rendering: optimizeLegibility
+
+=selection($color, $amount)
+	::-moz-selection
+		background-color: rgba($color, $amount)
+	::selection
+		background-color: rgba($color, $amount)
