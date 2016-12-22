@@ -1,0 +1,11 @@
+/**
+ * md-colors as classes
+ */
+
+@each $name, $shades in $md-colors {
+	@each $shade, $hex in $shades {
+		.md-color-#{$name}-#{$shade} {
+			background-color: #{$hex}
+		}
+	}
+}
