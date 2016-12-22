@@ -10,9 +10,9 @@ const read = () => loc.hash.split('/').pop();
 const App = ({ color }) => (
 	<div id="app">
 		<Top color={ color } />
-		<main id="content" dflex>
+		<main id="content">
 			<Side color={ color } />
-			<Color color={ color } flex />
+			<Color color={ color } />
 		</main>
 	</div>
 );

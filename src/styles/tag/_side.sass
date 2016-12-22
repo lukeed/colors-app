@@ -6,10 +6,12 @@ $side-height: 2rem // 32
 $side-width: 4rem // 64
 
 #side
-	width: $side-width
+	@extend %dflex
+	@extend %column
 	@extend %scroller
-	padding-right: $gutter/2
+	width: $side-width
 
 	a
+		@extend %flex
 		@extend %scroll-item
 		min-height: $side-height
