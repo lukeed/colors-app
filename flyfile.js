@@ -18,7 +18,6 @@ const src = {
 	],
 	vendor: [
 		// js vendors to be merged as `vendor.js`
-		`${node}/promise-polyfill/promise.min.js`
 	]
 };
 

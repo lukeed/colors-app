@@ -13,7 +13,7 @@
   "scripts": {
     "build": "fly build",
     "release": "fly release",
-    "start": "fly release && serve release -s",
+    "start": "serve release -s",
     "watch": "fly watch"
   },
   "engines": {

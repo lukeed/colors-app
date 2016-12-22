@@ -47,5 +47,5 @@ doc.addEventListener('DOMContentLoaded', handler);
 
 // cache all assets if browser supports serviceworker
 if (isOk && process.env.NODE_ENV === 'production') {
-	nav.serviceWorker.register('/service-worker.js').then(onOk).catch(onErr);
+	nav.serviceWorker.register('/service-worker.js').then(onSuccess).catch(onError);
 }
