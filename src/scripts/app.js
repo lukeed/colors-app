@@ -19,7 +19,7 @@ const App = ({ color }) => (
 
 let elem, clor;
 function draw(str) {
-	elem = render(<App color={ str }/>, doc.body, elem);
+	elem = render(<App color={ str } />, doc.body, elem);
 	clor = clor || doc.getElementById('color');
 }
 

@@ -1,11 +1,11 @@
 {
-  "name": "Fly Kit: Preact",
-  "short_name": "fly-preact",
+  "name": "Material Colors",
+  "short_name": "md-colors",
   "start_url": "/?homescreen=1",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait",
-  "background_color": "#f2f2f2",
-  "theme_color": "#673ab8",
+  "background_color": "#ffffff",
+  "theme_color": "#fafafa",
   "icons": [{
     "src": "icon/android-chrome-192x192.png",
     "type": "image/png",
