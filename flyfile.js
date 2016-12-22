@@ -59,6 +59,9 @@ export async function release() {
 		cacheId: 'fly-kit-preact',
 		navigateFallback: 'index.html'
 	}).target(rel);
+	// minify sw files
+	await this.source(`${rel}/*.js`).uglify(cUgly).target(rel);
+	await this.source(`${rel}/sw/*.js`).uglify(cUgly).target(`${rel}/sw`);
 }
 
 export async function watch() {
