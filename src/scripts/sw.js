@@ -1,11 +1,10 @@
+import { win, loc, nav } from './shared';
+
 // Check to make sure service workers are supported in the current browser,
 // and that the current page is accessed from a secure origin.
 // Using a service worker from an insecure origin will trigger JS console errors
 // @docs: http://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features
 
-const loc = window.location;
-
-export const nav = window.navigator;
 
 const isLocalhost = Boolean(loc.hostname === 'localhost' ||
 	// [::1] is the IPv6 localhost address.
