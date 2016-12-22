@@ -1,0 +1,28 @@
+/**
+ * Main Stylesheet
+ */
+
+@import 'md-colors'
+
+@import 'config/variables'
+@import 'config/mixins'
+
+*
+	box-sizing: border-box
+
+
+html, body
+	height: 100%
+	width: 100%
+	padding: 0
+	margin: 0
+	background: md-color('grey', '100')
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif
+	font-weight: 400
+	color: md-color('grey', '800')
+	+font-smoothing()
+
+#app
+	height: 100%
+
+@import 'views/all'

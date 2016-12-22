@@ -1,0 +1,44 @@
+/**
+ * Nav / Header
+ */
+
+$header-height: 56px
+
+.header
+	position: fixed
+	height: $header-height
+	width: 100%
+	padding: 0
+	left: 0
+	top: 0
+	background: $primary
+	box-shadow: 0 0 5px rgba($black, 0.5)
+	z-index: 50
+
+	h1
+		float: left
+		margin: 0
+		padding: 0 15px
+		font-size: 24px
+		line-height: $header-height
+		font-weight: 400
+		color: $white
+
+	nav
+		float: right
+		font-size: 100%
+
+		a
+			display: inline-block
+			height: $header-height
+			line-height: $header-height
+			padding: 0 15px
+			text-align: center
+			min-width: 50px
+			background: rgba($white, 0)
+			will-change: background-color
+			text-decoration: none
+			color: md-color('grey', '100')
+			&:hover,
+			&:active
+				background: rgba($white, 0.3)

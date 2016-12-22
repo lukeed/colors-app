@@ -1,0 +1,19 @@
+{
+  "name": "Fly Kit: Preact",
+  "short_name": "fly-preact",
+  "start_url": "/?homescreen=1",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2f2f2",
+  "theme_color": "#673ab8",
+  "icons": [{
+    "src": "icon/android-chrome-192x192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "icon/android-chrome-512x512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }]
+}
