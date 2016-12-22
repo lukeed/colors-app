@@ -2,7 +2,7 @@ const buble = require('rollup-plugin-buble');
 const replace = require('rollup-plugin-replace');
 const resolve = require('rollup-plugin-node-resolve');
 
-module.exports = {
+module.exports = isDev => ({
 	rollup: {
 		plugins: [
 			buble({
@@ -11,12 +11,12 @@ module.exports = {
 					modules: false
 				}
 			}),
-			replace({'process.env.NODE_ENV': JSON.stringify('production')}),
+			replace({'process.env.NODE_ENV': JSON.stringify(isDev || 'production')}),
 			resolve({browser: true, jsnext: true})
 		]
 	},
 	bundle: {
 		format: 'iife',
-		sourceMap: true
+		sourceMap: isDev && true
 	}
-};
+});

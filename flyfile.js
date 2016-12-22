@@ -1,7 +1,7 @@
 'use strict';
 
 const bs = require('browser-sync');
-const cRoll = require('./config/rollup');
+const rcf = require('./config/rollup');
 const cUgly = require('./config/uglify');
 
 let isWatch = 0;
@@ -30,8 +30,10 @@ export async function copies(o) {
 	await this.source(o.src || src.copy).target(tar);
 }
 
+let conf;
 export async function scripts() {
-	await this.source('src/scripts/app.js').xo().rollup(cRoll).target(`${tar}/js`);
+	conf = conf || rcf(isWatch && 'development');
+	await this.source('src/scripts/app.js').rollup(conf).target(`${tar}/js`);
 }
 
 export async function vendors() {
