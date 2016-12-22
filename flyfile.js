@@ -15,9 +15,6 @@ const src = {
 	copy: [
 		'src/static/**/*.*',
 		'src/*.html'
-	],
-	vendor: [
-		// js vendors to be merged as `vendor.js`
 	]
 };
 
@@ -35,10 +32,6 @@ export async function scripts() {
 	await this.source('src/scripts/app.js').rollup(conf).target(`${tar}/js`);
 }
 
-export async function vendors() {
-	await this.source(src.vendor).concat('vendor.js').target(`${tar}/js`);
-}
-
 export async function styles() {
 	await this.source('src/styles/app.sass').sass({
 		outputStyle: 'compressed',
@@ -47,7 +40,7 @@ export async function styles() {
 }
 
 export async function build() {
-	await this.serial(['clean', 'copies', 'vendors', 'scripts', 'styles']); // @todo: parallel
+	await this.serial(['clean', 'copies', 'scripts', 'styles']); // @todo: parallel
 }
 
 export async function release() {
