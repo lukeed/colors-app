@@ -1,5 +1,7 @@
 import { h } from 'preact';
 
-export default ({ color }) => {
-	console.log('color received', color);
-};
+export default ({ color }) => (
+	<div id="color" flex>
+		<p>THIS IS COLOR: { color }</p>
+	</div>
+);
