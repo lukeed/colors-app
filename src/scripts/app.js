@@ -37,7 +37,7 @@ function scrollUp() {
 
 function handler() {
 	const hash = read();
-	draw(names.indexOf(hash) > -1 ? hash : all[0])
+	draw(names.indexOf(hash) > -1 ? hash : names[0])
 	scrollUp();
 }
 
