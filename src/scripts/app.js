@@ -23,13 +23,14 @@ function draw(str) {
 	clor = clor || doc.getElementById('color');
 }
 
-let rID;
+let rID, pos;
 function scrollUp() {
-	if (clor.scrollTop <= 0) {
-		clor.scrollTop = 0;
+	pos = clor.scrollTop;
+	if (pos <= 0) {
+		pos = 0;
 		cancelAnimationFrame(rID);
 	} else {
-		clor.scrollTop -= 40;
+		clor.scrollTop -= Math.min(60, pos * 0.28125);
 		rID = requestAnimationFrame(scrollUp);
 	}
 }
