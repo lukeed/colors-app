@@ -1,0 +1,45 @@
+/**
+ * Loader / Splash
+ */
+
+/**
+	<div id="loader">
+		<img src="/img/colors.svg" alt="Material Colors">
+		<h1>Material Colors</h1>
+		<p>A Material Design color browser and picker. Supports HEX, RGB, and HSL formats.</p>
+	</div>
+ */
+
+#loader
+	@extend #content
+	background: $white
+	top: 0
+	@extend %column
+	@extend %jcenter
+	@extend %acenter
+	visibility: visible
+	text-align: center
+	@extend %fader
+
+	*
+		width: 85%
+		max-width: 20rem
+
+	img
+		margin-top: -2.5rem
+		max-width: 18rem
+
+	p
+		margin-top: 0.5rem
+		font-size: 90%
+		font-style: italic
+
+#app
+	@extend %fader
+	opacity: 0
+
+.loaded
+	#loader
+		opacity: 0
+	#app
+		opacity: 1
