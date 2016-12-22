@@ -7,14 +7,16 @@ const Row = ({idx, hex}) => {
 	const hsl = rgb2hsl(rgb);
 
 	return (
-		<li style={ bgc(hex) }>
-			<p>{ idx }</p>
+		<li style={ style }>
+			<strong>{ idx }</strong>
 			<p>{ hex }</p>
-			<p>{ rgb }</p>
-			<p>{ hsl }</p>
 		</li>
 	);
 };
+
+				// const hsl = rgb2hsl(rgb);
+				// <label>rgb({ rgb.join(', ') })</label>
+				// <label>hsl({ hsl[0] }, { hsl[1] }%, { hsl[2] }%)</label>
 
 export default ({ color }) => {
 	const obj = all[color];
