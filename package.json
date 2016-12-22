@@ -1,18 +1,17 @@
 {
-  "name": "fly-kit-preact",
-  "version": "1.0.0",
+  "name": "colors",
+  "version": "0.0.0",
   "private": true,
-  "description": "A starter kit for Preact front-end apps",
+  "description": "A Material Design color browser and picker. Supports HEX, RGB, and HSL formats.",
   "license": "MIT",
-  "repository": "lukeed/fly-kit-web",
+  "repository": "lukeed/colors-app",
   "author": {
     "name": "Luke Edwards",
     "email": "luke.edwards05@gmail.com",
     "url": "https://lukeed.com"
   },
   "scripts": {
-    "build": "fly build",
-    "release": "fly release",
+    "build": "fly build release",
     "start": "serve release -s",
     "watch": "fly watch"
   },

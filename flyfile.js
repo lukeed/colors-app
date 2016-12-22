@@ -44,7 +44,6 @@ export async function build() {
 }
 
 export async function release() {
-	await this.start('build');
 	// minify js
 	await this.source(`${tar}/js/*`).uglify(cUgly).target(`${tar}/js`);
 	// version assets
