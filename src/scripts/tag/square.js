@@ -1,7 +1,9 @@
 import { h } from 'preact';
+import { all } from '../shared';
 
-export default ({ color, active }) => {
-	let cls = `md-color-${color}-500`;
-	active && (cls += ' active');
-	return <a href={ `#/${color}` } className={ cls } />
-};
+export default ({ color, active }) => (
+	<a href={ `#/${color}` }
+		className={ active ? 'active' : '' }
+		style={ `background-color: ${ all[color]['500'] }` }
+	/>
+);

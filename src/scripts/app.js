@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact';
 import { isOk, onSuccess, onError } from './sw';
-import { nav, loc, win, doc, all } from './shared';
+import { nav, loc, win, doc, names } from './shared';
 import Color from './tag/color';
 import Side from './tag/side';
 import Top from './tag/top';
@@ -24,7 +24,7 @@ function draw(str) {
 
 function handler() {
 	const hash = read();
-	draw(all.indexOf(hash) > -1 ? hash : all[0])
+	draw(names.indexOf(hash) > -1 ? hash : all[0])
 }
 
 win.onhashchange = handler;

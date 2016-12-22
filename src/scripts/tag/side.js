@@ -1,10 +1,10 @@
 import { h } from 'preact';
 import Square from './square';
-import { all } from '../shared';
+import { names } from '../shared';
 
 export default ({ color }) => (
 	<nav id="side">
-		{ all.map(s =>
+		{ names.map(s =>
 			<Square color={ s } active={ s === color } />
 		) }
 	</nav>
