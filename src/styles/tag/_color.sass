@@ -8,10 +8,7 @@ $color-width: 4rem // 64
 #color
 	width: $side-width
 	@extend %scroller
+	padding-left: $gutter/2
 
-	a
-		display: block
-		border-radius: $radius
-		margin-bottom: $gutter
-		min-height: $side-height
-		width: 100%
+	li
+		@extend %scroll-item

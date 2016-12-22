@@ -2,17 +2,14 @@
  * Color Nav
  */
 
-$side-gutter: 4px
 $side-height: 2rem // 32
 $side-width: 4rem // 64
 
 #side
 	width: $side-width
 	@extend %scroller
+	padding-right: $gutter/2
 
 	a
-		display: block
-		border-radius: $radius
-		margin-bottom: $gutter
+		@extend %scroll-item
 		min-height: $side-height
-		width: 100%
