@@ -88,10 +88,9 @@ export async function reload() {
 }
 
 export async function package() {
-	await this.$.write(`${rel}/package.json`, `
-{
+	await this.$.write(`${rel}/package.json`, `{
   "name": "colors",
-	"version": "${ pkg.version }",
+  "version": "${ pkg.version }",
   "license": "MIT",
   "repository": "lukeed/colors-app",
   "author": {
@@ -105,6 +104,5 @@ export async function package() {
   "dependencies": {
     "serve": "^2.0.0"
   }
-}
-	`);
+}`);
 }

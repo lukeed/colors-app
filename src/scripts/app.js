@@ -37,8 +37,10 @@ function scrollUp() {
 
 function handler() {
 	const hash = read();
-	draw(names.indexOf(hash) > -1 ? hash : names[0])
+	const name = names.indexOf(hash) > -1 ? hash : names[0];
+	draw(name);
 	scrollUp();
+	ga && ga('send', 'event', name, 'click');
 }
 
 // init && redraw
