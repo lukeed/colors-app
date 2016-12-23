@@ -3,6 +3,7 @@
 const bs = require('browser-sync');
 const rcf = require('./config/rollup');
 const cUgly = require('./config/uglify');
+const pkg = require('./package.json');
 
 let isWatch = 0;
 
@@ -61,6 +62,8 @@ export async function release() {
 	// minify sw files
 	await this.source(`${rel}/*.js`).uglify(cUgly).target(rel);
 	await this.source(`${rel}/sw/*.js`).uglify(cUgly).target(`${rel}/sw`);
+	// write new `package.json` file
+	await this.start('package');
 }
 
 export async function watch() {
@@ -82,4 +85,26 @@ export async function watch() {
 
 export async function reload() {
 	isWatch && bs.reload();
+}
+
+export async function package() {
+	await this.$.write(`${rel}/package.json`, `
+{
+  "name": "colors",
+	"version": "${ pkg.version }",
+  "license": "MIT",
+  "repository": "lukeed/colors-app",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "scripts": {
+    "start": "serve -s"
+  },
+  "dependencies": {
+    "serve": "^2.0.0"
+  }
+}
+	`);
 }
