@@ -40,7 +40,7 @@ function handler() {
 	const name = names.indexOf(hash) > -1 ? hash : names[0];
 	draw(name);
 	scrollUp();
-	ga && ga('send', 'event', name, 'click');
+	ga && ga('send', 'pageview', name);
 }
 
 // init && redraw
