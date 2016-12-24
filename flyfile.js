@@ -16,6 +16,9 @@ const src = {
 	copy: [
 		'src/static/**/*.*',
 		'src/*.html'
+	],
+	vendor: [
+		`${node}/mo-js/build/mo.min.js`
 	]
 };
 
@@ -25,6 +28,10 @@ export async function clean() {
 
 export async function copies(o) {
 	await this.source(o.src || src.copy).target(tar);
+}
+
+export async function vendors() {
+	await this.source(src.vendor).concat('vendor.js').target(`${tar}/js`);
 }
 
 let conf;
@@ -41,7 +48,7 @@ export async function styles() {
 }
 
 export async function build() {
-	await this.serial(['clean', 'copies', 'scripts', 'styles']); // @todo: parallel
+	await this.serial(['clean', 'copies', 'scripts', 'vendors', 'styles']); // @todo: parallel
 }
 
 export async function release() {

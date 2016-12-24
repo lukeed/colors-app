@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "md-colors": "^1.0.0",
+    "mo-js": "^0.288.1",
     "preact": "^7.1.0"
   },
   "devDependencies": {
@@ -27,6 +28,7 @@
     "connect-history-api-fallback": "^1.3.0",
     "fly": "beta",
     "fly-autoprefixer": "^1.0.0",
+    "fly-concat": "^1.1.0",
     "fly-esnext": "^2.0.0",
     "fly-htmlmin": "^2.0.1",
     "fly-precache": "^2.0.1",
