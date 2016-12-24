@@ -1,7 +1,21 @@
 /* global: mojs */
+import tweens from './tweens';
 import { burst, win } from './shared';
 
-const { Burst, Shape } = mojs;
+let timeline;
+
+function init () {
+	const anims = tweens();
+	timeline = new mojs.Timeline();
+	// add each to timeline
+	for (var k = 0; k < anims.length; k++) {
+		timeline.add(anims[k]);
+	}
+	console.log(anims);
+	console.log(timeline);
+	// single play
+	timeline.play();
+}
 
 // read & set dimensions; do once per resize
 function getDimensions(node) {
@@ -19,5 +33,6 @@ export function move(node) {
 
 export function animate(node) {
 	if (!win.mojs) return;
-	console.log('hello', node);
+	burst.style.zIndex = 9;
+	return timeline ? timeline.replay() : init();
 }
