@@ -15,7 +15,10 @@ $color-height: 5rem // 80
 		align-items: center
 		min-height: $color-height
 		padding: 0.5rem 1rem
-		user-select: none
+
+		*
+			pointer-events: none
+			user-select: none
 
 	p
 		@extend %flex
