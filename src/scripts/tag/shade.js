@@ -1,15 +1,26 @@
 import { h } from 'preact';
 import { bgc, doc } from '../shared';
+import { animate, move } from '../burst';
 import { hex2rgb, isDark } from '../convert';
 // import { hex2rgb, rgb2hsl, isLight } from '../convert';
 
-function copy(e) {
+function copy(text) {
 	const el = doc.createElement('input');
-	el.value = e.target.lastChild.textContent;
+	el.value = text;
 	doc.body.appendChild(el);
 	el.select();
 	doc.execCommand('copy');
 	el.remove();
+}
+
+function handle(e) {
+	const elm = e.target;
+	// position #burst
+	move(elm);
+	// run animation
+	animate(elm);
+	// copy color text
+	copy(elm.lastChild.textContent);
 }
 
 export default ({idx, hex}) => {
@@ -18,7 +29,7 @@ export default ({idx, hex}) => {
 	isDark(rgb) && (style += 'color:white;');
 
 	return (
-		<li style={ style } onDblClick={ copy }>
+		<li style={ style } onDblClick={ handle }>
 			<strong>{ idx }</strong>
 			<p>{ hex }</p>
 		</li>

@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact';
 import { isOk, onSuccess, onError } from './sw';
-import { nav, loc, win, doc, names } from './shared';
+import { nav, id, loc, win, doc, names } from './shared';
 import Color from './tag/color';
 import Side from './tag/side';
 import Top from './tag/top';
@@ -20,7 +20,7 @@ const App = ({ color }) => (
 let elem, clor;
 function draw(str) {
 	elem = render(<App color={ str } />, doc.body, elem);
-	clor = clor || doc.getElementById('color');
+	clor = clor || id('color');
 }
 
 let rID, pos;
