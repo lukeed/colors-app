@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact';
 import { isOk, onSuccess, onError } from './sw';
-import { nav, id, loc, win, doc } from './shared';
+import { on, nav, id, loc, win, doc } from './shared';
 import { names } from './schemes/md';
 import Color from './tag/color';
 import Side from './tag/side';
@@ -46,7 +46,7 @@ function handler() {
 
 // init && redraw
 win.onhashchange = handler;
-doc.addEventListener('DOMContentLoaded', handler);
+on('DOMContentLoaded', handler);
 
 // cache all assets if browser supports serviceworker
 if (isOk && process.env.NODE_ENV === 'production') {
