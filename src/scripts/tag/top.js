@@ -1,5 +1,7 @@
 import { h } from 'preact';
 
 export default ({ color }) => (
-	<header id="title">{ color.replace('-', ' ') }</header>
+	<header id="top">
+		<h1>{ color.replace('-', ' ') }</h1>
+	</header>
 );
