@@ -2,7 +2,12 @@
  * Title Header
  */
 
-$top-height: 2.5rem
+$top-height: 2.5em
+$top-padding: 0.75em
+
+%top-ends
+	position: absolute
+	top: 0
 
 #top
 	position: fixed
@@ -11,12 +16,25 @@ $top-height: 2.5rem
 	line-height: $top-height
 	text-transform: capitalize
 	border-bottom: 1px solid md-color('grey', '300')
+	text-align: center
 	z-index: 5
 	right: 0
 	left: 0
 	top: 0
+
 	h1
 		font-size: 1.125em
-		text-align: center
 		@media screen and (max-width: 321px)
 			font-size: 1em
+
+	div
+		@extend %top-ends
+		right: $top-padding
+
+#logo
+	@extend %top-ends
+	width: $top-height
+	background: transparent url(/img/colors.svg) no-repeat
+	top: 2.5%
+	height: 95%
+	left: $top-padding
