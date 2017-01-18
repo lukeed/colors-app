@@ -1,6 +1,6 @@
 import { h } from 'preact';
-import { bgc, doc } from '../shared';
 import { animate, move } from '../burst';
+import { bgc, doc, emit } from '../shared';
 import { hex2rgb, isDark } from '../convert';
 // import { hex2rgb, rgb2hsl, isLight } from '../convert';
 
@@ -21,6 +21,8 @@ function handle(e) {
 	animate(elm);
 	// copy color text
 	copy(elm.lastChild.textContent);
+	// show toast
+	emit('copied');
 }
 
 export default ({idx, hex}) => {
