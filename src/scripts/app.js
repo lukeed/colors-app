@@ -2,6 +2,7 @@ import { h, render, Component } from 'preact';
 import { isOk, onSuccess, onError } from './sw';
 import { on, nav, id, loc, win, doc } from './shared';
 import { names } from './schemes/md';
+import Toast from './tag/toast';
 import Color from './tag/color';
 import Side from './tag/side';
 import Top from './tag/top';
@@ -15,6 +16,7 @@ const App = ({ color }) => (
 			<Side color={ color } />
 			<Color color={ color } />
 		</main>
+		<Toast />
 	</div>
 );
 
