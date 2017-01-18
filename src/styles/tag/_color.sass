@@ -10,20 +10,21 @@ $color-height: 5rem // 80
 	padding-left: 0
 
 	li
+		position: relative
 		@extend %scroll-item
 		@extend %dflex
-		align-items: center
+		@extend %acenter
+		@extend %jcenter
 		min-height: $color-height
-		padding: 0.5rem 1rem
 
 		*
 			pointer-events: none
 			user-select: none
 
-	p
-		@extend %flex
-		text-align: right
-
-	// label
-	// 	font-size: 65%
-	// 	font-style: italic
+	label
+		position: absolute
+		font-style: italic
+		font-weight: 700
+		font-size: 80%
+		right: 0.5em
+		top: 0.5em
