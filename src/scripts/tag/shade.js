@@ -1,8 +1,7 @@
 import { h } from 'preact';
 import { animate, move } from '../burst';
 import { bgc, doc, emit } from '../shared';
-import { hex2rgb, isDark } from '../convert';
-// import { hex2rgb, rgb2hsl, isLight } from '../convert';
+import { hex2rgb, rgb2hsl, isDark } from '../convert';
 
 function copy(text) {
 	const el = doc.createElement('input');
@@ -25,19 +24,29 @@ function handle(e) {
 	emit('copied');
 }
 
-export default ({idx, hex}) => {
+export default ({idx, hex, format}) => {
 	const rgb = hex2rgb(hex);
 	let style = bgc(hex);
 	isDark(rgb) && (style += 'color:white;');
 
+	let text;
+	switch (format) {
+		case 'hsl':
+			const hsl = rgb2hsl(rgb);
+			text = `hsl(${ hsl[0] }, ${ hsl[1] }%, ${ hsl[2] }%)`;
+			break;
+		case 'rgb':
+			text = `rgb(${ rgb.join(', ') })`;
+			break;
+		default:
+			text = `#${ hex }`;
+			break;
+	}
+
 	return (
-		<li style={ style } onDblClick={ handle }>
-			<strong>{ idx }</strong>
-			<p>{ hex }</p>
+		<li style={ style } onClick={ handle }>
+			<label>{ idx }</label>
+			{ text }
 		</li>
 	);
 };
-
-				// const hsl = rgb2hsl(rgb);
-				// <label>rgb({ rgb.join(', ') })</label>
-				// <label>hsl({ hsl[0] }, { hsl[1] }%, { hsl[2] }%)</label>

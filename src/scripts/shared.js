@@ -11,6 +11,8 @@ export function id(str) {
 
 export const burst = id('burst');
 
+export const modes = ['hex', 'rgb', 'hsl'];
+
 export function on(ev, handler) {
 	doc.addEventListener(ev, handler);
 }
