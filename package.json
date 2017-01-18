@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "fly build release",
-    "start": "serve release -s",
+    "start": "serve release -s -p 3000",
     "watch": "fly watch"
   },
   "engines": {
