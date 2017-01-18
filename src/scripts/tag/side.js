@@ -1,5 +1,6 @@
 import { h } from 'preact';
-import { all, bgc, names } from '../shared';
+import { all, names } from '../schemes/md';
+import { bgc } from '../shared';
 
 export default ({ color }) =>
 	h('nav', {id: 'side'}, [

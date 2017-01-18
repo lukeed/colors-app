@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { all } from '../shared';
+import { all } from '../schemes/md';
 import Shade from './shade';
 
 export default ({ color }) => {
