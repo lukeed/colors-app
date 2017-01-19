@@ -35,14 +35,6 @@ $ npm run build
 
 Compiles all files. Output is sent to the `dist` directory.
 
-#### release
-
-```
-$ npm run release
-```
-
-Builds the app for production, includes [cache-busting](http://webassets.readthedocs.io/en/latest/expiring.html) asset names. Output is sent to the `release` directory.
-
 #### start
 
 ```
@@ -50,14 +42,6 @@ $ npm start
 ```
 
 Executes [`build`](#build) and runs your application (from the `dist` directory) in the browser.
-
-#### test
-
-```
-$ npm run test
-```
-
-Lints all JavaScript files.
 
 #### watch
 
