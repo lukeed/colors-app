@@ -1,6 +1,6 @@
 {
   "name": "colors",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "A Material Design color browser and picker. Supports HEX, RGB, and HSL formats.",
   "license": "MIT",
