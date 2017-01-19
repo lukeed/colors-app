@@ -2,7 +2,8 @@
  * Color Shades
  */
 
-$color-height: 5rem // 80
+$color-height: 5em // 80
+$color-text-xy: 0.5em
 
 #color
 	@extend %flex
@@ -21,13 +22,16 @@ $color-height: 5rem // 80
 			pointer-events: none
 			user-select: none
 
-	label
+	label, span
 		position: absolute
-		font-style: italic
 		font-weight: 700
 		font-size: 80%
-		right: 0.5em
-		top: 0.5em
+
+	label
+		top: $color-text-xy
+		left: $color-text-xy
 
 	span
-		font-size: 120%
+		font-style: italic
+		right: $color-text-xy
+		bottom: $color-text-xy
