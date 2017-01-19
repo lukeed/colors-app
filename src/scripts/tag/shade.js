@@ -46,7 +46,7 @@ export default ({idx, hex, format}) => {
 	return (
 		<li style={ style } onClick={ handle }>
 			<label>{ idx }</label>
-			{ text }
+			<span>{ text }</span>
 		</li>
 	);
 };
