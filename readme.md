@@ -1,37 +1,23 @@
-# fly-kit-preact
+# colors-app
 
-> A starter kit for building offline / SPA / PWA apps with [Preact](https://preactjs.com/) :atom_symbol:
+> A Material Design color browser and picker. Supports HEX, RGB, and HSL formats.
 
-**Do you want to kickstart a new project with [Preact](https://preactjs.com/) but _hate_ dealing with build tools?**<br>
-Great! :laughing: You've come to the right place! By using `fly-kit-preact`, you will skip the "tooling phase" & jump straight into application development.
+One night I asked myself, "Self, what can I build in **two hours** using [Preact](https://github.com/developit/preact)?" :thinking: <br>
+The [initial version](https://github.com/lukeed/colors-app/tree/433ab81727b136da7bd7f8d3f5ca9c9a42ad3d15) took _less than 2 hours_ and [I'm pretty happy](https://twitter.com/lukeed05/status/812088705171107840) with it<sup>*</sup>. :smile:
 
-This configuration fits the "90% use-case" for those who want to build offline-first web apps. See the included [features](#features) below. However, with [Fly](https://github.com/flyjs/fly), it's very easy to add or change settings for your needs.
+Additional features (and other changes) have and will continue to improve this web app.
 
-> Synonymous buzzwords: [SPA](https://en.wikipedia.org/wiki/Single-page_application), [PWA](https://developers.google.com/web/updates/2015/12/getting-started-pwa), [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-
-**Please note:** Boilerplate _does not_ incorporate the latest ["css-in-js" or "css modules" techniques](https://github.com/MicheleBertoli/css-in-js). Instead, the more traditional approach is taken wherein `styles` and `scripts` are kept separate. That said, you may **certainly and easily** take that route if desired. :white_check_mark:
-
----
-<p align="center">:warning: Boilerplate & commands will evolve as my own development process does. :warning:</p>
----
+> **<sup>*</sup>** I got a head start by using [`fly-kit-preact`](https://github.com/lukeed/fly-kit-preact). If you're interested in Webpack, you may want to see [`preact-starter`](https://github.com/lukeed/preact-starter) instead!
 
 ## Install
 
 ```sh
-git clone https://github.com/lukeed/fly-kit-preact
+git clone https://github.com/lukeed/colors-app
 npm install
 npm start
 ```
 
 > :exclamation: **Pro Tip:** Use [Yarn](https://yarnpkg.com/) to install dependencies 3x faster than NPM!
-
-## Features
-
-* Offline Caching (via `serviceWorker`)
-* SASS & Autoprefixer
-* Asset Versioning (aka "cache-busting")
-* ES2015 (ES6) and ES2016 (ES7) support via [Buble](https://buble.surge.sh/guide/)
-* JavaScript linting via [XO](https://github.com/sindresorhus/xo) and [`eslint-config-xo-preact`](https://github.com/adriantoine/eslint-config-xo-preact)
 
 ## Development
 
