@@ -3,11 +3,11 @@
 > A Material Design color browser and picker. Supports HEX, RGB, and HSL formats.
 
 One night I asked myself, "Self, what can I build in **two hours** using [Preact](https://github.com/developit/preact)?" :thinking: <br>
-The [initial version](https://github.com/lukeed/colors-app/tree/433ab81727b136da7bd7f8d3f5ca9c9a42ad3d15) took _less than 2 hours_ and [I'm pretty happy](https://twitter.com/lukeed05/status/812088705171107840) with it<sup>*</sup>. :smile:
+The [initial version](https://github.com/lukeed/colors-app/tree/433ab81727b136da7bd7f8d3f5ca9c9a42ad3d15) took _less than 2 hours_ and [I'm pretty happy](https://twitter.com/lukeed05/status/812088705171107840) with it.<sup>*</sup> :smile:
 
 Additional features (and other changes) have and will continue to improve this web app.
 
-> **<sup>*</sup>** I got a head start by using [`fly-kit-preact`](https://github.com/lukeed/fly-kit-preact). If you're interested in Webpack, you may want to see [`preact-starter`](https://github.com/lukeed/preact-starter) instead!
+> **<sup>*</sup>** I got a head start by using [`fly-kit-preact`](https://github.com/lukeed/fly-kit-preact). Webpack users may want to see [`preact-starter`](https://github.com/lukeed/preact-starter) instead!
 
 ## Install
 
