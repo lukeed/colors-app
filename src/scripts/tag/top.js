@@ -6,6 +6,6 @@ export default ({ color, format, onMode, onLogo }) => (
 
 		<h1>{ color.replace('-', ' ') }</h1>
 
-		<div onClick={ onMode }>{ format }</div>
+		<div id="modes" onClick={ onMode }>{ format }</div>
 	</header>
 );

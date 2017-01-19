@@ -5,10 +5,6 @@
 $top-height: 2.5em
 $top-padding: 0.75em
 
-%top-ends
-	position: absolute
-	top: 0
-
 #top
 	position: fixed
 	background: $white
@@ -27,14 +23,18 @@ $top-padding: 0.75em
 		@media screen and (max-width: 321px)
 			font-size: 1em
 
-	div
-		@extend %top-ends
-		right: $top-padding
+#modes
+	position: absolute
+	font-size: 75%
+	text-transform: uppercase
+	right: $top-padding
+	padding: 0 1em
+	top: 0
 
 #logo
-	@extend %top-ends
+	position: absolute
 	width: $top-height
 	background: transparent url(/img/colors.svg) no-repeat
-	top: 2.5%
-	height: 95%
 	left: $top-padding
+	height: 90%
+	top: 5%
