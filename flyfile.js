@@ -106,10 +106,10 @@ export async function package() {
     "url": "https://lukeed.com"
   },
   "scripts": {
-    "start": "serve -s"
+    "start": "serve -s -p 3000"
   },
   "dependencies": {
-    "serve": "^2.0.0"
+    "serve": "^2.4.2"
   }
 }`);
 }
