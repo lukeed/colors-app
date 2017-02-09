@@ -62,9 +62,8 @@ export async function release(fly) {
 	await fly.source(`${rel}/*.html`).htmlmin().target(rel);
 	// make assets available for offline
 	await fly.source(`${rel}/**/*`).precache({
-		stripPrefix: rel,
-		cacheId: 'fly-kit-preact',
-		navigateFallback: 'index.html'
+		navigateFallback: 'index.html',
+		stripPrefix: rel
 	}).target(rel);
 	// minify sw files
 	await fly.source(`${rel}/*.js`).uglify(cUgly).target(rel);
