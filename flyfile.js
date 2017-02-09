@@ -1,7 +1,7 @@
 'use strict';
 
 const bs = require('browser-sync');
-const rcf = require('./config/rollup');
+const cRoll = require('./config/rollup');
 const cUgly = require('./config/uglify');
 const pkg = require('./package.json');
 
@@ -22,63 +22,60 @@ const src = {
 	]
 };
 
-export async function clean() {
-	await this.clear([tar, rel]);
+export async function clean(fly) {
+	await fly.clear([tar, rel]);
 }
 
-export async function copies(o) {
-	await this.source(o.src || src.copy).target(tar);
-}
-
-export async function vendors() {
-	await this.source(src.vendor).concat('vendor.js').target(`${tar}/js`);
+export async function copies(fly, o) {
+	await fly.source(o.src || src.copy).target(tar);
 }
 
 let conf;
-export async function scripts() {
-	conf = conf || rcf(isWatch && 'development');
-	await this.source('src/scripts/app.js').rollup(conf).target(`${tar}/js`);
+export async function scripts(fly) {
+	conf = conf || cRoll(isWatch && 'development');
+	await fly.source('src/scripts/app.js').xo().rollup(conf).target(`${tar}/js`);
 }
 
-export async function styles() {
-	await this.source('src/styles/app.sass').sass({
-		outputStyle: 'compressed',
-		includePaths: [`${node}/md-colors/src`]
+export async function vendors(fly) {
+	await fly.source(src.vendor).concat('vendor.js').target(`${tar}/js`);
+}
+
+export async function styles(fly) {
+	await fly.source('src/styles/app.sass').sass({
+		includePaths: [`${node}/md-colors/src`],
+		outputStyle: 'compressed'
 	}).autoprefixer().target(`${tar}/css`);
 }
 
-export async function build() {
-	await this.serial(['clean', 'copies', 'scripts', 'vendors', 'styles']); // @todo: parallel
+export async function build(fly) {
+	await fly.parallel(['clean', 'copies', 'vendors', 'scripts', 'styles']);
 }
 
-export async function release() {
+export async function release(fly) {
 	// minify js
-	await this.source(`${tar}/js/*`).uglify(cUgly).target(`${tar}/js`);
+	await fly.source(`${tar}/js/*`).uglify(cUgly).target(`${tar}/js`);
 	// version assets
-	await this.source(`${tar}/**/*`).rev({
+	await fly.source(`${tar}/**/*`).rev({
 		ignores: ['.html', '.png', '.svg', '.ico', '.json', '.txt']
 	}).revManifest({dest: rel, trim: tar}).revReplace().target(rel);
 	// minify html
-	await this.source(`${rel}/*.html`).htmlmin().target(rel);
+	await fly.source(`${rel}/*.html`).htmlmin().target(rel);
 	// make assets available for offline
-	await this.source(`${rel}/**/*`).precache({
+	await fly.source(`${rel}/**/*`).precache({
 		stripPrefix: rel,
 		cacheId: 'fly-kit-preact',
 		navigateFallback: 'index.html'
 	}).target(rel);
 	// minify sw files
-	await this.source(`${rel}/*.js`).uglify(cUgly).target(rel);
-	await this.source(`${rel}/sw/*.js`).uglify(cUgly).target(`${rel}/sw`);
-	// write new `package.json` file
-	await this.start('package');
+	await fly.source(`${rel}/*.js`).uglify(cUgly).target(rel);
+	await fly.source(`${rel}/sw/*.js`).uglify(cUgly).target(`${rel}/sw`);
 }
 
-export async function watch() {
+export async function watch(fly) {
 	isWatch = 1;
-	await this.start('build');
-	await this.watch(src.js, ['scripts', 'reload']);
-	await this.watch(src.css, ['styles', 'reload']);
-	await this.watch(src.copy, ['copies', 'reload']);
+	await fly.watch(src.js, ['scripts', 'reload']);
+	await fly.watch(src.css, ['styles', 'reload']);
+	await fly.watch(src.copy, ['copies', 'reload']);
 	// start server
 	bs({
 		server: tar,
@@ -94,8 +91,8 @@ export async function reload() {
 	isWatch && bs.reload();
 }
 
-export async function package() {
-	await this.$.write(`${rel}/package.json`, `{
+export async function package(fly) {
+	await fly.$.write(`${rel}/package.json`, `{
   "name": "colors",
   "version": "${ pkg.version }",
   "license": "MIT",
@@ -106,10 +103,9 @@ export async function package() {
     "url": "https://lukeed.com"
   },
   "scripts": {
-    "start": "serve -s -p 3000"
+    "start": "serve -s"
   },
   "dependencies": {
-    "serve": "^2.4.2"
-  }
-}`);
+    "serve": "^3.2.7"
+  }\n}`);
 }

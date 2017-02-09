@@ -11,9 +11,9 @@
     "url": "https://lukeed.com"
   },
   "scripts": {
-    "build": "fly build release",
+    "build": "fly build release package",
     "start": "serve release -s",
-    "watch": "fly watch"
+    "watch": "fly build watch"
   },
   "engines": {
     "node": ">= 4.6.0"
