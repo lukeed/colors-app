@@ -1,4 +1,4 @@
-import { h, render, Component } from 'preact';
+import { h, render } from 'preact';
 import { isOk, onSuccess, onError } from './sw';
 import { on, modes, nav, id, loc, win, doc } from './shared';
 import { names } from './schemes/md';
@@ -11,7 +11,8 @@ const read = () => loc.hash.split('/').pop();
 
 const App = ({ color, format }) => (
 	<div id="app">
-		<Top color={ color } format={ format }
+		<Top
+			color={ color } format={ format }
 			onMode={ toggleMode } onLogo={ openSchemes }
 		/>
 
