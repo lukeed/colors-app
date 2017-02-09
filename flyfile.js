@@ -22,10 +22,6 @@ const src = {
 	]
 };
 
-export async function clean(fly) {
-	await fly.clear([tar, rel]);
-}
-
 export async function copies(fly, o) {
 	await fly.source(o.src || src.copy).target(tar);
 }
@@ -48,7 +44,7 @@ export async function styles(fly) {
 }
 
 export async function build(fly) {
-	await fly.parallel(['clean', 'copies', 'vendors', 'scripts', 'styles']);
+	await fly.clear([tar, rel]).parallel(['copies', 'vendors', 'scripts', 'styles']);
 }
 
 export async function release(fly) {
