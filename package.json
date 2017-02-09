@@ -21,7 +21,7 @@
   "dependencies": {
     "md-colors": "^1.0.0",
     "mo-js": "^0.288.1",
-    "preact": "^7.1.0"
+    "preact": "^7.2.0"
   },
   "devDependencies": {
     "browser-sync": "^2.18.5",
