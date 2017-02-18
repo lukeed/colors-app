@@ -4,34 +4,6 @@ import { bgc, doc, emit } from '../shared';
 import { hex2rgb, rgb2hsl, isDark } from '../convert';
 import CopyAnimation from './copy-animation';
 
-// class PubSub {
-// 	constructor() { this._subscribers = {}; }
-// 	subscribe(channelName, callback) {
-// 		let channel = this._subscribers[channelName];
-// 		if (channel == null) {
-// 			channel = [];
-// 			this._subscribers[channelName] = channel;
-// 		}
-// 		channel.push(callback);
-// 	}
-//
-// 	publish(channelName, data) {
-// 		const channel = this._subscribers[channelName];
-// 		if (channel == null) { return 1; }
-// 		console.log(channel);
-//
-// 		for (let i = 0; i < channel; i++) {
-// 			const callback = channel[i];
-// 			if (typeof callback === 'function') {
-// 				callback(data);
-// 			}
-// 		}
-//
-// 	}
-// }
-//
-// const pubsub = new PubSub;
-
 function copy(text) {
 	const el = doc.createElement('input');
 	el.value = text;
