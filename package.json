@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "fly build release",
-    "deploy": "fly package && now release",
+    "deploy": "npm run build && now release",
     "start": "serve release -s",
     "watch": "fly build watch"
   },

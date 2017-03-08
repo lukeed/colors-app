@@ -54,6 +54,14 @@ export async function release(fly) {
 	// minify sw files
 	await fly.source(`${rel}/*.js`).uglify(cUgly).target(rel);
 	await fly.source(`${rel}/sw/*.js`).uglify(cUgly).target(`${rel}/sw`);
+	// create `package.json` for `now deploy`
+	await fly.start('package');
+}
+
+export async function package(fly) {
+	const pkg = require('./package.json');
+	const next = require('./config/template')(pkg.version);
+	await fly.$.write(`${rel}/package.json`, JSON.stringify(next, null, '  '));
 }
 
 export async function watch(fly) {
@@ -74,10 +82,4 @@ export async function watch(fly) {
 
 export async function reload() {
 	isWatch && bs.reload();
-}
-
-export async function package(fly) {
-	const pkg = require('./package.json');
-	const next = require('./config/template')(pkg.version);
-	await fly.$.write(`${rel}/package.json`, JSON.stringify(next, null, '  '));
 }
