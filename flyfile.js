@@ -3,9 +3,8 @@
 const bs = require('browser-sync');
 const cRoll = require('./config/rollup');
 const cUgly = require('./config/uglify');
-const pkg = require('./package.json');
 
-let isWatch = 0;
+let isWatch = false;
 
 const tar = 'dist';
 const rel = 'release';
@@ -18,7 +17,6 @@ const src = {
 		'src/*.html'
 	],
 	vendor: [
-		`${node}/mo-js/build/mo.min.js`
 	]
 };
 
@@ -67,7 +65,7 @@ export async function release(fly) {
 }
 
 export async function watch(fly) {
-	isWatch = 1;
+	isWatch = true;
 	await fly.watch(src.js, ['scripts', 'reload']);
 	await fly.watch(src.css, ['styles', 'reload']);
 	await fly.watch(src.copy, ['copies', 'reload']);
@@ -87,20 +85,8 @@ export async function reload() {
 }
 
 export async function package(fly) {
-	await fly.$.write(`${rel}/package.json`, `{
-  "name": "colors",
-  "version": "${ pkg.version }",
-  "license": "MIT",
-  "repository": "lukeed/colors-app",
-  "author": {
-    "name": "Luke Edwards",
-    "email": "luke.edwards05@gmail.com",
-    "url": "https://lukeed.com"
-  },
-  "scripts": {
-    "start": "serve -s"
-  },
-  "dependencies": {
-    "serve": "^3.2.7"
-  }\n}`);
+	const pkg = require('./package.json');
+	const next = require('./config/template')(pkg.version);
+
+	await fly.$.write(`${rel}/package.json`, JSON.stringify(next, null, '  '));
 }
