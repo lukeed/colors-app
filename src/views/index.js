@@ -1,8 +1,9 @@
 import { h, Component } from 'preact';
 import { Router, route } from 'preact-router';
+import schemes from '../scripts/colors';
+import { bgc } from '../scripts/shared';
 import Toaster from './toast';
-import Color from './color';
-import Side from './side';
+import Shade from './shade';
 import Top from './top';
 
 const getCurr = () => {
@@ -51,7 +52,10 @@ export default class App extends Component {
 	// }
 
 	render(_, { palette, color, mode }) {
-		console.log('rerender', color, mode);
+		console.info('~ rerender ~');
+		const { names, colors, base } = schemes[palette];
+		const shades = colors[color];
+
 		return (
 			<div id="app">
 				<Top color={ color } format={ mode }
@@ -60,8 +64,13 @@ export default class App extends Component {
 
 				<Router onChange={ this.onRoute }>
 					<main id="content" default>
-						<Side scheme={ palette } color={ color } />
-						<Color scheme={ palette } color={ color } format={ mode } />
+						<nav id="side">
+							{ names.map(k => <a href={ `/${palette}/${k}` } className={{ active: k===color }} style={ bgc(colors[k][base]) } />)}
+						</nav>
+
+						<ul id="color">
+							{ Object.keys(shades).map(k => <Shade idx={ k } format={ mode } hex={ shades[k] } />) }
+						</ul>
 					</main>
 				</Router>
 
