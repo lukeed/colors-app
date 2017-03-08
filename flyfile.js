@@ -29,8 +29,8 @@ export async function scripts(fly) {
 }
 
 export async function styles(fly) {
-	await fly.source('src/styles/app.sass').sass({
-		includePaths: [`${node}/md-colors/src`],
+	await fly.source('src/index.sass').sass({
+		includePaths: ['node_modules/md-colors/src'],
 		outputStyle: 'compressed'
 	}).autoprefixer().target(`${tar}/css`);
 }
