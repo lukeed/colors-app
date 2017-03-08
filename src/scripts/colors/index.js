@@ -17,7 +17,11 @@ const pair = (colors, keys) => {
 	return out;
 };
 
-const format = obj => ({ names: obj.names, colors: pair(obj.all, obj.keys) });
+const format = obj => ({
+	base: obj.base,
+	names: obj.names,
+	colors: pair(obj.all, obj.keys)
+});
 
 export default {
 	material: format(MD),

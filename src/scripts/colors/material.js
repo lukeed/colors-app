@@ -2,6 +2,11 @@
  * Material Design Palette
  * @see https://material.io/guidelines/style/color.html
  */
+
+export const base = '500';
+
+export const keys = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', 'A100', 'A200', 'A400', 'A700'];
+
 export const all = {
 	red: ['FFEBEE', 'FFCDD2', 'EF9A9A', 'E57373', 'EF5350', 'F44336', 'E53935', 'D32F2F', 'C62828', 'B71C1C', 'FF8A80', 'FF5252', 'FF1744', 'D50000'],
   pink: ['FCE4EC', 'F8BBD0', 'F48FB1', 'F06292', 'EC407A', 'E91E63', 'D81B60', 'C2185B', 'AD1457', '880E4F', 'FF80AB', 'FF4081', 'F50057', 'C51162'],
@@ -25,5 +30,3 @@ export const all = {
 }
 
 export const names = Object.keys(all);
-
-export const keys = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', 'A100', 'A200', 'A400', 'A700'];

@@ -2,6 +2,11 @@
  * Open Color Palette
  * @see https://yeun.github.io/open-color/
  */
+
+export const base = '6';
+
+export const keys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
 export const all = {
 	red: ['FFF5F5', 'FFE3E3', 'FFC9C9', 'FFA8A8', 'FF8787', 'FF6B6B', 'FA5252', 'F03E3E', 'E03131', 'C92A2A'],
   pink: ['FFF0F6', 'FFDEEB', 'FCC2D7', 'FAA2C1', 'F783AC', 'F06595', 'E64980', 'D6336C', 'C2255C', 'A61E4D'],
@@ -19,5 +24,3 @@ export const all = {
 };
 
 export const names = Object.keys(all);
-
-export const keys = ['0', '1', '2', '3', '4', '5','6', '7', '8', '9'];
