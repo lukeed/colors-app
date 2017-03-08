@@ -4,7 +4,7 @@ const bs = require('browser-sync');
 const cRoll = require('./config/rollup');
 const cUgly = require('./config/uglify');
 
-let isWatch = false;
+let isWatch = process.argv.indexOf('watch') !== -1;
 
 const tar = 'dist';
 const rel = 'release';
@@ -22,6 +22,7 @@ export async function copies(fly, o) {
 
 let conf;
 export async function scripts(fly) {
+	console.log('this is watch', isWatch);
 	conf = conf || cRoll(isWatch && 'development');
 	await fly.source(src.js).rollup(conf).target(`${tar}/js`);
 }
