@@ -23,7 +23,7 @@ export async function copies(fly, o) {
 let conf;
 export async function scripts(fly) {
 	conf = conf || cRoll(isWatch && 'development');
-	await fly.source(src.js).xo().rollup(conf).target(`${tar}/js`);
+	await fly.source(src.js).rollup(conf).target(`${tar}/js`);
 }
 
 export async function styles(fly) {

@@ -24,11 +24,9 @@
     "preact": "^7.2.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.7",
+    "browser-sync": "^2.18.8",
     "connect-history-api-fallback": "^1.3.0",
-    "eslint-config-xo-preact": "^1.0.0",
-    "eslint-plugin-react": "^6.9.0",
-    "fly": "^2.0.3",
+    "fly": "^2.0.5",
     "fly-autoprefixer": "^1.1.0",
     "fly-clear": "^1.0.1",
     "fly-concat": "^1.2.0",
@@ -36,34 +34,13 @@
     "fly-htmlmin": "^2.1.0",
     "fly-precache": "^2.1.0",
     "fly-rev": "^2.2.0",
-    "fly-rollup": "frantic1048/fly-rollup",
+    "fly-rollup": "^2.0.0",
     "fly-sass": "^2.1.0",
-    "fly-uglify": "^2.1.0",
+    "fly-uglify": "^2.1.1",
     "fly-watch": "^1.1.1",
-    "fly-xo": "^2.1.0",
     "rollup-plugin-buble": "^0.15.0",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-replace": "^1.1.1",
-    "serve": "^3.2.7"
-  },
-  "xo": {
-    "envs": [
-      "browser"
-    ],
-    "esnext": true,
-    "extends": "xo-preact",
-    "globals": [
-      "ga"
-    ],
-    "rules": {
-      "react/jsx-closing-bracket-location": 0,
-      "react/jsx-space-before-closing": 0,
-      "react/jsx-filename-extension": 0,
-      "one-var-declaration-per-line": 1,
-      "react/jsx-curly-spacing": 0,
-      "no-unused-expressions": 0,
-      "object-curly-spacing": 0,
-      "one-var": 1
-    }
+    "serve": "^4.0.1"
   }
 }
