@@ -1,17 +1,21 @@
 import { h, Component } from 'preact';
 import { Router, route } from 'preact-router';
-import schemes from '../scripts/colors';
+import palettes from '../scripts/colors';
 import { bgc } from '../scripts/shared';
 import Toaster from './toast';
 import Shade from './shade';
 import Top from './top';
 
-const getCurr = () => {
-	// where are we?
-	const curr = url.split('/');
-	const palette = curr[1] || 'material';
-	const color = curr[2] || 'red';
-
+let rID, pos, elm;
+function scrollUp() {
+	pos = elm.scrollTop;
+	if (pos <= 0) {
+		pos = 0;
+		cancelAnimationFrame(rID);
+	} else {
+		elm.scrollTop -= Math.min(60, pos * 0.28125);
+		rID = requestAnimationFrame(scrollUp);
+	}
 }
 
 export default class App extends Component {
@@ -22,7 +26,7 @@ export default class App extends Component {
 			mode: 'hex' // @todo integers
 		};
 
-		this.onRoute = ({ url }) => {
+		this.onRoute = ({ previous, url }) => {
 			if (process.env.NODE_ENV === 'production') {
 				ga('send', 'pageview', url);
 			}
@@ -36,7 +40,7 @@ export default class App extends Component {
 				return route(`/${palette}/${color}`, true);
 			}
 
-			this.setState({ palette, color });
+			this.setState({ palette, color }, () => previous && scrollUp());
 		}
 	}
 
@@ -47,13 +51,9 @@ export default class App extends Component {
 		return bool;
 	}
 
-	// componentDidUpdate(_, state) {
-	// 	const now = this.state;
-	// }
-
 	render(_, { palette, color, mode }) {
 		console.info('~ rerender ~');
-		const { names, colors, base } = schemes[palette];
+		const { names, colors, base } = palettes[palette];
 		const shades = colors[color];
 
 		return (
@@ -68,7 +68,7 @@ export default class App extends Component {
 							{ names.map(k => <a href={ `/${palette}/${k}` } className={{ active: k===color }} style={ bgc(colors[k][base]) } />)}
 						</nav>
 
-						<ul id="color">
+						<ul id="color" ref={ el => {elm = el} }>
 							{ Object.keys(shades).map(k => <Shade idx={ k } format={ mode } hex={ shades[k] } />) }
 						</ul>
 					</main>
