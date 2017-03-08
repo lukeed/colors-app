@@ -16,5 +16,9 @@ module.exports = semver => ({
 	},
 	dependencies: {
 		'serve': '^4.0.0'
+	},
+	now: {
+		name: 'colors',
+		alias: 'colors'
 	}
 });

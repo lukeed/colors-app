@@ -12,7 +12,7 @@ const node = 'node_modules';
 const src = {
 	js: 'src/index.js',
 	css: 'src/index.sass',
-	copy: ['src/static/**/*.*', 'src/*.html']
+	copy: ['src/static/**/*.*', 'src/*.html'],
 	watch: { js:'src/**/*.js', css:'src/**/*.sass' }
 };
 
