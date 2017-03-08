@@ -15,8 +15,6 @@ const src = {
 	copy: [
 		'src/static/**/*.*',
 		'src/*.html'
-	],
-	vendor: [
 	]
 };
 
@@ -30,10 +28,6 @@ export async function scripts(fly) {
 	await fly.source('src/scripts/app.js').xo().rollup(conf).target(`${tar}/js`);
 }
 
-export async function vendors(fly) {
-	await fly.source(src.vendor).concat('vendor.js').target(`${tar}/js`);
-}
-
 export async function styles(fly) {
 	await fly.source('src/styles/app.sass').sass({
 		includePaths: [`${node}/md-colors/src`],
@@ -42,7 +36,7 @@ export async function styles(fly) {
 }
 
 export async function build(fly) {
-	await fly.clear([tar, rel]).parallel(['copies', 'vendors', 'scripts', 'styles']);
+	await fly.clear([tar, rel]).parallel(['copies', 'scripts', 'styles']);
 }
 
 export async function release(fly) {
