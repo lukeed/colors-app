@@ -10,12 +10,10 @@ const tar = 'dist';
 const rel = 'release';
 const node = 'node_modules';
 const src = {
-	js: 'src/scripts/**',
-	css: 'src/styles/**',
-	copy: [
-		'src/static/**/*.*',
-		'src/*.html'
-	]
+	js: 'src/index.js',
+	css: 'src/index.sass',
+	copy: ['src/static/**/*.*', 'src/*.html']
+	watch: { js:'src/**/*.js', css:'src/**/*.sass' }
 };
 
 export async function copies(fly, o) {
@@ -25,11 +23,11 @@ export async function copies(fly, o) {
 let conf;
 export async function scripts(fly) {
 	conf = conf || cRoll(isWatch && 'development');
-	await fly.source('src/scripts/app.js').xo().rollup(conf).target(`${tar}/js`);
+	await fly.source(src.js).xo().rollup(conf).target(`${tar}/js`);
 }
 
 export async function styles(fly) {
-	await fly.source('src/index.sass').sass({
+	await fly.source(src.css).sass({
 		includePaths: ['node_modules/md-colors/src'],
 		outputStyle: 'compressed'
 	}).autoprefixer().target(`${tar}/css`);
@@ -60,9 +58,9 @@ export async function release(fly) {
 
 export async function watch(fly) {
 	isWatch = true;
-	await fly.watch(src.js, ['scripts', 'reload']);
-	await fly.watch(src.css, ['styles', 'reload']);
 	await fly.watch(src.copy, ['copies', 'reload']);
+	await fly.watch(src.watch.js, ['scripts', 'reload']);
+	await fly.watch(src.watch.css, ['styles', 'reload']);
 	// start server
 	bs({
 		server: tar,
@@ -81,6 +79,5 @@ export async function reload() {
 export async function package(fly) {
 	const pkg = require('./package.json');
 	const next = require('./config/template')(pkg.version);
-
 	await fly.$.write(`${rel}/package.json`, JSON.stringify(next, null, '  '));
 }
