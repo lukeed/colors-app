@@ -3,19 +3,19 @@
  * @see https://yeun.github.io/open-color/
  */
 export const all = {
-	red: ['fff5f5', 'ffe3e3', 'ffc9c9', 'ffa8a8', 'ff8787', 'ff6b6b', 'fa5252', 'f03e3e', 'e03131', 'c92a2a'],
-	pink: ['fff0f6', 'ffdeeb', 'fcc2d7', 'faa2c1', 'f783ac', 'f06595', 'e64980', 'd6336c', 'c2255c', 'a61e4d'],
-	grape: ['f8f0fc', 'f3d9fa', 'eebefa', 'e599f7', 'da77f2', 'cc5de8', 'be4bdb', 'ae3ec9', '9c36b5', '862e9c'],
-	violet: ['f3f0ff', 'e5dbff', 'd0bfff', 'b197fc', '9775fa', '845ef7', '7950f2', '7048e8', '6741d9', '5f3dc4'],
-	indigo: ['edf2ff', 'dbe4ff', 'bac8ff', '91a7ff', '748ffc', '5c7cfa', '4c6ef5', '4263eb', '3b5bdb', '364fc7'],
-	blue: ['e8f7ff', 'ccedff', 'a3daff', '72c3fc', '4dadf7', '329af0', '228ae6', '1c7cd6', '1b6ec2', '1862ab'],
-	cyan: ['e3fafc', 'c5f6fa', '99e9f2', '66d9e8', '3bc9db', '22b8cf', '15aabf', '1098ad', '0c8599', '0b7285'],
-	teal: ['e6fcf5', 'c3fae8', '96f2d7', '63e6be', '38d9a9', '20c997', '12b886', '0ca678', '099268', '087f5b'],
-	green: ['ebfbee', 'd3f9d8', 'b2f2bb', '8ce99a', '69db7c', '51cf66', '40c057', '37b24d', '2f9e44', '2b8a3e'],
-	lime: ['f4fce3', 'e9fac8', 'd8f5a2', 'c0eb75', 'a9e34b', '94d82d', '82c91e', '74b816', '66a80f', '5c940d'],
-	yellow: ['fff9db', 'fff3bf', 'ffec99', 'ffe066', 'ffd43b', 'fcc419', 'fab005', 'f59f00', 'f08c00', 'e67700'],
-	orange: ['fff4e6', 'ffe8cc', 'ffd8a8', 'ffc078', 'ffa94d', 'ff922b', 'fd7e14', 'f76707', 'e8590c', 'd9480f'],
-	gray: ['f8f9fa', 'f1f3f5', 'e9ecef', 'dee2e6', 'ced4da', 'adb5bd', '868e96', '495057', '343a40', '212529']
+	red: ['FFF5F5', 'FFE3E3', 'FFC9C9', 'FFA8A8', 'FF8787', 'FF6B6B', 'FA5252', 'F03E3E', 'E03131', 'C92A2A'],
+  pink: ['FFF0F6', 'FFDEEB', 'FCC2D7', 'FAA2C1', 'F783AC', 'F06595', 'E64980', 'D6336C', 'C2255C', 'A61E4D'],
+  grape: ['F8F0FC', 'F3D9FA', 'EEBEFA', 'E599F7', 'DA77F2', 'CC5DE8', 'BE4BDB', 'AE3EC9', '9C36B5', '862E9C'],
+  violet: ['F3F0FF', 'E5DBFF', 'D0BFFF', 'B197FC', '9775FA', '845EF7', '7950F2', '7048E8', '6741D9', '5F3DC4'],
+  indigo: ['EDF2FF', 'DBE4FF', 'BAC8FF', '91A7FF', '748FFC', '5C7CFA', '4C6EF5', '4263EB', '3B5BDB', '364FC7'],
+  blue: ['E8F7FF', 'CCEDFF', 'A3DAFF', '72C3FC', '4DADF7', '329AF0', '228AE6', '1C7CD6', '1B6EC2', '1862AB'],
+  cyan: ['E3FAFC', 'C5F6FA', '99E9F2', '66D9E8', '3BC9DB', '22B8CF', '15AABF', '1098AD', '0C8599', '0B7285'],
+  teal: ['E6FCF5', 'C3FAE8', '96F2D7', '63E6BE', '38D9A9', '20C997', '12B886', '0CA678', '099268', '087F5B'],
+  green: ['EBFBEE', 'D3F9D8', 'B2F2BB', '8CE99A', '69DB7C', '51CF66', '40C057', '37B24D', '2F9E44', '2B8A3E'],
+  lime: ['F4FCE3', 'E9FAC8', 'D8F5A2', 'C0EB75', 'A9E34B', '94D82D', '82C91E', '74B816', '66A80F', '5C940D'],
+  yellow: ['FFF9DB', 'FFF3BF', 'FFEC99', 'FFE066', 'FFD43B', 'FCC419', 'FAB005', 'F59F00', 'F08C00', 'E67700'],
+  orange: ['FFF4E6', 'FFE8CC', 'FFD8A8', 'FFC078', 'FFA94D', 'FF922B', 'FD7E14', 'F76707', 'E8590C', 'D9480F'],
+  gray: ['F8F9FA', 'F1F3F5', 'E9ECEF', 'DEE2E6', 'CED4DA', 'ADB5BD', '868E96', '495057', '343A40', '212529']
 };
 
 export const names = Object.keys(all);
