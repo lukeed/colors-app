@@ -22,7 +22,6 @@ export async function copies(fly, o) {
 
 let conf;
 export async function scripts(fly) {
-	console.log('this is watch', isWatch);
 	conf = conf || cRoll(isWatch && 'development');
 	await fly.source(src.js).rollup(conf).target(`${tar}/js`);
 }
