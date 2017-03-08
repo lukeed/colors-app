@@ -44,6 +44,8 @@ export async function release(fly) {
 	await fly.source(`${tar}/**/*`).rev({
 		ignores: ['.html', '.png', '.svg', '.ico', '.json', '.txt']
 	}).revManifest({dest: rel, trim: tar}).revReplace().target(rel);
+	// remove `rev-manifest.json` (no need)
+	await fly.clear(`${rel}/rev-manifest.json`);
 	// minify html
 	await fly.source(`${rel}/*.html`).htmlmin().target(rel);
 	// make assets available for offline
