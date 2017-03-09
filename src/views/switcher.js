@@ -4,7 +4,7 @@ import Radio from './radio';
 
 const options = [
 	{label: 'Material Design', value: 'material'},
-	{label: 'Open Color', value: 'opencolor'}
+	{label: 'Open Color', value: 'open'}
 ];
 
 export default class Switcher extends Component {

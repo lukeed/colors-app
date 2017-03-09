@@ -1,5 +1,5 @@
 import * as MD from './material';
-import * as OC from './opencolor';
+import * as OC from './open';
 
 /**
  * Pair Color values with Key names.
@@ -25,5 +25,5 @@ const format = obj => ({
 
 export default {
 	material: format(MD),
-	opencolor: format(OC)
+	open: format(OC)
 }
