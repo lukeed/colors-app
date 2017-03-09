@@ -7,6 +7,8 @@ import Toaster from './toast';
 import Shade from './shade';
 import Top from './top';
 
+const modes = ['hex', 'rgb', 'hsl'];
+
 let rID, pos, elm;
 function scrollUp() {
 	pos = elm.scrollTop;
@@ -24,11 +26,17 @@ export default class App extends Component {
 		this.state = {
 			palette: 'material',
 			color: 'red',
-			mode: 'hex' // @todo integers
+			mode: 0
 		};
 
 		this.openModal = () => emit('popup');
 		this.setPalette = val => route(`/${val}/red`);
+
+		this.setMode = () => {
+			let mode = this.state.mode + 1;
+			(mode >= modes.length) && (mode = 0);
+			this.setState({ mode });
+		};
 
 		this.onRoute = ({ previous, url }) => {
 			if (process.env.NODE_ENV === 'production') {
@@ -45,7 +53,7 @@ export default class App extends Component {
 			}
 
 			this.setState({ palette, color }, () => previous && scrollUp());
-		}
+		};
 	}
 
 	shouldComponentUpdate(state) {
@@ -59,11 +67,12 @@ export default class App extends Component {
 		console.info('~ rerender ~');
 		const { names, colors, base } = palettes[palette];
 		const shades = colors[color];
+		const format = modes[mode];
 
 		return (
 			<div id="app">
-				<Top color={ color } format={ mode }
-					onMode={ () => console.log('toggleMode') } onLogo={ this.openModal }
+				<Top color={ color } format={ format }
+					onMode={ this.setMode } onLogo={ this.openModal }
 				/>
 
 				<Router onChange={ this.onRoute }>
@@ -73,7 +82,7 @@ export default class App extends Component {
 						</nav>
 
 						<ul id="color" ref={ el => {elm = el} }>
-							{ Object.keys(shades).map(k => <Shade idx={ k } format={ mode } hex={ shades[k] } />) }
+							{ Object.keys(shades).map(k => <Shade idx={ k } format={ format } hex={ shades[k] } />) }
 						</ul>
 					</main>
 				</Router>
