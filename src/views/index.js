@@ -4,7 +4,7 @@ import { bg, emit, win } from '../scripts/shared';
 import palettes from '../scripts/colors';
 import Switcher from './Switcher';
 import Toaster from './toast';
-import Shade from './shade';
+import Shade from './shade2';
 import Top from './top';
 
 const modes = ['hex', 'rgb', 'hsl'];
