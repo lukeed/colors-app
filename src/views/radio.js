@@ -6,7 +6,7 @@ export default props => (
 			value={ props.value } checked={ props.checked }
 			onChange={ props.onChange }
 		/>
-		<span class="md-radio--fake"><span /></span>
+		<span class="md-radio__fake"><span /></span>
 		<div>{ props.label }</div>
 	</label>
 )

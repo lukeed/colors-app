@@ -1,0 +1,79 @@
+/**
+ * @see https://github.com/lukeed/md-radio
+ */
+
+$radio-inner-size: 2 * 8px
+$radio-outer-size: 3 * 8px
+
+$radio-font-size: 18px
+
+$radio-text-color: $black
+$radio-inactive-color: lighten(md-color('grey', '400'), 10)
+$radio-active-color: md-color('blue', '500')
+$radio-inner-color: $white
+
+$radio-transition: all $base-timing ease-in-out
+
+=size($val)
+	width: $val
+	height: $val
+
+.md-radio
+  position: relative
+  display: inline-block
+  font-size: $radio-font-size
+  line-height: 2 * $radio-outer-size - 2
+  cursor: pointer
+
+  &:hover .md-radio__fake > span
+    transform: scale(0.5)
+    opacity: .5
+
+  input
+    +size(1px)
+    opacity: 0 // Hide input, but leave it available for tabbing
+    // display: none // jk
+
+    &:checked + .md-radio__fake
+      border-color: $radio-active-color
+      transform: scale(1)
+      > span
+        transform: scale(1)
+        opacity: 1
+    &:focus + .md-radio__fake > span
+      background-color: darken($radio-active-color, 10)
+      transform: scale(1)
+      opacity: 1
+
+  &__fake,
+  &__fake > span
+    transition: $radio-transition
+
+  // basic text label & text wrapper
+  > div
+    line-height: $radio-font-size
+    display: inline-block
+
+  // Native input control and checked events
+  // Outer ring of custom radio
+  &__fake
+    position: relative
+    display: block
+    float: left
+    clear: left
+    margin: 8px
+    +size($radio-outer-size)
+    border: ($radio-outer-size - $radio-inner-size)/4 solid $radio-inactive-color
+    border-radius: 50%
+    background-color: $radio-inner-color
+    transform: scale(0.75)
+
+    // Inner ring of custom radio
+    > span
+      +size($radio-inner-size)
+      transform: scale(0)
+      display: block
+      margin: ($radio-outer-size - $radio-inner-size)/4
+      border-radius: 50%
+      background-color: $radio-active-color
+      opacity: 0
