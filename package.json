@@ -1,6 +1,6 @@
 {
   "name": "colors",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Copy color values from popular palettes. Supports HEX, RGB, and HSL formats.",
   "license": "MIT",
   "repository": "lukeed/colors-app",
