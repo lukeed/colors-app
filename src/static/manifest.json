@@ -1,7 +1,7 @@
 {
-  "name": "Material Colors",
-  "short_name": "md-colors",
-  "start_url": "/?homescreen=1",
+  "name": "Colors",
+  "short_name": "colors",
+  "start_url": "/material/red",
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#ffffff",
