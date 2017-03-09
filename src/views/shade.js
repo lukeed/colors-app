@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 // import { animate, move } from '../burst';
 import { bg, doc, emit } from '../scripts/shared';
-import { hex2rgb, rgb2hsl, isDark } from '../scripts/colors/convert';
+import { hex2rgb, rgb2hsl, isDark } from '../colors/convert';
 // import CopyAnimation from './copy-animation';
 
 function copy(text) {

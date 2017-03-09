@@ -1,8 +1,6 @@
 import { h } from 'preact';
-
 import { bg, doc, emit } from '../scripts/shared';
-import { hex2rgb, rgb2hsl, isDark } from '../scripts/colors/convert';
-// import CopyAnimation from './copy-animation';
+import { hex2rgb, rgb2hsl, isDark } from '../colors/convert';
 
 function copy(text) {
 	const el = doc.createElement('input');

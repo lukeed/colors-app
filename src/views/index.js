@@ -1,8 +1,8 @@
 import { h, Component } from 'preact';
 import { Router, route } from 'preact-router';
 import { bg, emit, win } from '../scripts/shared';
-import palettes from '../scripts/colors';
 import Switcher from './Switcher';
+import schemes from '../colors';
 import Toaster from './toast';
 import Shade from './shade2';
 import Top from './top';
@@ -63,7 +63,7 @@ export default class App extends Component {
 
 	render(_, { palette, color, mode }) {
 		console.info('~ rerender ~');
-		const { names, colors, base } = palettes[palette];
+		const { names, colors, base } = schemes[palette];
 		const shades = colors[color];
 		const format = modes[mode];
 
