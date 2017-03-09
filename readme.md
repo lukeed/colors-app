@@ -1,9 +1,16 @@
 # colors-app
 
-> A Material Design color browser and picker. Supports HEX, RGB, and HSL formats.
+> Copy color values from popular palettes. Supports HEX, RGB, and HSL formats.
+
+##### Current Palettes
+- [Material Design](https://material.io/guidelines/style/color.html)
+- [Open Color](https://yeun.github.io/open-color/)
+- Please suggest more!
+
+##### Why?
 
 One night I asked myself, "Self, what can I build in **two hours** using [Preact](https://github.com/developit/preact)?" :thinking: <br>
-The [initial version](https://github.com/lukeed/colors-app/tree/433ab81727b136da7bd7f8d3f5ca9c9a42ad3d15) took _less than 2 hours_ and [I'm pretty happy](https://twitter.com/lukeed05/status/812088705171107840) with it.<sup>*</sup> :smile:
+The [initial version](https://github.com/lukeed/colors-app/tree/433ab81727b136da7bd7f8d3f5ca9c9a42ad3d15) took _less than 2 hours_ and [I was pretty happy](https://twitter.com/lukeed05/status/812088705171107840) with it.<sup>*</sup> :smile:
 
 Additional features (and other changes) have and will continue to improve this web app.
 
