@@ -24,8 +24,8 @@ export default class Switcher extends Component {
 		on('popup', this.show);
 	}
 
-	shouldComponentUpdate(_, state) {
-		return state.open !== this.state.open;
+	shouldComponentUpdate(props, state) {
+		return state.open !== this.state.open || props.selected !== this.props.selected;
 	}
 
 	render({ selected }, { open }) {
