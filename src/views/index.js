@@ -58,9 +58,7 @@ export default class App extends Component {
 
 	shouldComponentUpdate(state) {
 		const now = this.state;
-		const bool = now.palette !== state.palette || now.color !== state.color || now.mode !== state.mode;
-		console.log('root should update?', bool);
-		return bool;
+		return now.palette !== state.palette || now.color !== state.color || now.mode !== state.mode;
 	}
 
 	render(_, { palette, color, mode }) {
