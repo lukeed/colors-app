@@ -1,7 +1,8 @@
 import { h, Component } from 'preact';
 import { Router, route } from 'preact-router';
+import { bg, emit } from '../scripts/shared';
 import palettes from '../scripts/colors';
-import { bgc } from '../scripts/shared';
+import Switcher from './Switcher';
 import Toaster from './toast';
 import Shade from './shade';
 import Top from './top';
@@ -25,6 +26,9 @@ export default class App extends Component {
 			color: 'red',
 			mode: 'hex' // @todo integers
 		};
+
+		this.openModal = () => emit('popup');
+		this.setPalette = val => route(`/${val}/red`);
 
 		this.onRoute = ({ previous, url }) => {
 			if (process.env.NODE_ENV === 'production') {
@@ -59,7 +63,7 @@ export default class App extends Component {
 		return (
 			<div id="app">
 				<Top color={ color } format={ mode }
-					onMode={ () => console.log('toggleMode') } onLogo={ () => console.log('openSchemes') }
+					onMode={ () => console.log('toggleMode') } onLogo={ this.openModal }
 				/>
 
 				<Router onChange={ this.onRoute }>
@@ -75,6 +79,8 @@ export default class App extends Component {
 				</Router>
 
 				<Toaster />
+
+				<Switcher selected={ palette } onSelect={ this.setPalette } />
 			</div>
 		);
 	}
