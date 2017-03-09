@@ -34,7 +34,7 @@ export default class Switcher extends Component {
 				<div className="modal__overlay" onClick={ this.hide } />
 
 				<div className="modal__content">
-					<h5>Select Palette</h5>
+					<h3>Select Palette</h3>
 					{ options.map(obj =>
 						<Radio label={ obj.label } value={ obj.value }
 							checked={ obj.value===selected } onChange={ this.onChange }

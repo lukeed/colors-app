@@ -17,7 +17,9 @@
 
 	&__content
 		position: absolute
-		height: 40vh
+		contain: strict
+		min-height: 8em
+		height: 30vh
 		width: 80vw
 		top: 50vh
 		left: 50%
@@ -26,7 +28,15 @@
 		box-shadow: 0 3px 6px rgba($black, 0.16), 0 3px 6px rgba($black, 0.23)
 		will-change: opacity, transform
 		background: $white
+		padding: 1.5em 0
 		opacity: 0
+
+	.md-radio
+		margin-left: 1.5em
+
+	h3
+		text-align: center
+		margin-bottom: 1em
 
 	&.open
 		transition-delay: 0s
