@@ -12,11 +12,11 @@ export default class Switcher extends Component {
 		this.state = { open:false };
 
 		this.show = () => this.setState({ open:true });
-		this.hide = cb => this.setState({ open:false }, cb || function () {});
+		this.hide = cb => this.setState({ open:false }, cb && cb.call && cb);
 
 		this.onChange = e => {
-			const val = e.target.value; // not ideal, but meh
-			this.hide(() => props.onSelect(val));
+			const cb = () => props.onSelect(e.target.value);
+			setTimeout(() => this.hide(cb), 300 * 1.1); // $base-timing
 		};
 	}
 
