@@ -6,10 +6,10 @@ import App from './views';
 render(<App />, doc.body);
 
 if (process.env.NODE_ENV === 'production') {
-	// // cache all assets if browser supports serviceworker
-	// if ('serviceWorker' in navigator && location.protocol === 'https:') {
-	// 	navigator.serviceWorker.register('/service-worker.js');
-	// }
+	// cache all assets if browser supports serviceworker
+	if ('serviceWorker' in nav && loc.protocol === 'https:') {
+		nav.serviceWorker.register('/service-worker.js');
+	}
 
 	// add Google Analytics
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
