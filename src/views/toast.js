@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { on } from '../scripts/shared';
+import { on } from './shared';
 
 export default class Toast extends Component {
 	constructor() {

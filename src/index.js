@@ -1,14 +1,13 @@
-// import { isOk, onSuccess, onError } from './sw';
 import { h, render } from 'preact';
-import { doc, loc, nav } from './scripts/shared';
+import { doc } from './views/shared';
 import App from './views';
 
 render(<App />, doc.body);
 
 if (process.env.NODE_ENV === 'production') {
 	// cache all assets if browser supports serviceworker
-	if ('serviceWorker' in nav && loc.protocol === 'https:') {
-		nav.serviceWorker.register('/service-worker.js');
+	if ('serviceWorker' in navigator && location.protocol === 'https:') {
+		navigator.serviceWorker.register('/service-worker.js');
 	}
 
 	// add Google Analytics

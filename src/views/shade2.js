@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { bg, doc, emit } from '../scripts/shared';
+import { bg, doc, emit } from './shared';
 import { hex2rgb, rgb2hsl, isDark } from '../colors/convert';
 
 function copy(text) {
