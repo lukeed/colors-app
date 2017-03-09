@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { Router, route } from 'preact-router';
-import { bg, emit } from '../scripts/shared';
+import { bg, emit, win } from '../scripts/shared';
 import palettes from '../scripts/colors';
 import Switcher from './Switcher';
 import Toaster from './toast';
@@ -39,7 +39,7 @@ export default class App extends Component {
 		};
 
 		this.onRoute = ({ previous, url }) => {
-			if (process.env.NODE_ENV === 'production') {
+			if (process.env.NODE_ENV === 'production' && win.ga) {
 				ga('send', 'pageview', url);
 			}
 
