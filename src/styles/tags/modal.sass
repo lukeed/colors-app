@@ -1,0 +1,39 @@
+/**
+ * Palette Switcher Modal
+ */
+
+.modal
+	position: relative
+	visibility: hidden
+	transition: all $base-timing ease $base-timing
+	opacity: 0
+	z-index: 5 // top zindex
+
+	&__overlay
+		@extend #app
+		position: absolute
+		background: rgba($black,0.35)
+		top: 0
+
+	&__content
+		position: absolute
+		height: 40vh
+		width: 80vw
+		top: 50vh
+		left: 50%
+		transition: all $base-timing ease
+		transform: translate(-50%, -35%)
+		box-shadow: 0 3px 6px rgba($black, 0.16), 0 3px 6px rgba($black, 0.23)
+		will-change: opacity, transform
+		background: $white
+		opacity: 0
+
+	&.open
+		transition-delay: 0s
+		visibility: visible
+		opacity: 1
+
+		.modal__content
+			transition-delay: $base-timing
+			transform: translate(-50%, -50%)
+			opacity: 1
