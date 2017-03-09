@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 // import { animate, move } from '../burst';
-import { bgc, doc, emit } from '../scripts/shared';
+import { bg, doc, emit } from '../scripts/shared';
 import { hex2rgb, rgb2hsl, isDark } from '../scripts/colors/convert';
 // import CopyAnimation from './copy-animation';
 
@@ -35,7 +35,7 @@ class Shade extends Component {
 		const {idx, hex, format} = this.props;
 
 		const rgb = hex2rgb(hex);
-		let style = bgc(hex);
+		let style = bg(hex);
 		isDark(rgb) && (style += 'color:white;');
 
 		let text;

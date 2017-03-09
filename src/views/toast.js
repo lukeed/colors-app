@@ -5,16 +5,16 @@ export default class Toast extends Component {
 	constructor() {
 		this.state = { open:false };
 
-		this.hideToast = () => this.setState({ open:false });
+		this.hide = () => this.setState({ open:false });
 
-		this.showToast = () => {
+		this.show = () => {
 			this.setState({ open:true });
-			setTimeout(this.hideToast, 3000);
+			setTimeout(this.hide, 3000);
 		};
 	}
 
 	componentDidMount() {
-		on('copied', this.showToast);
+		on('copied', this.show);
 	}
 
 	shouldComponentUpdate(_, state) {

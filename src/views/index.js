@@ -65,7 +65,7 @@ export default class App extends Component {
 				<Router onChange={ this.onRoute }>
 					<main id="content" default>
 						<nav id="side">
-							{ names.map(k => <a href={ `/${palette}/${k}` } className={{ active: k===color }} style={ bgc(colors[k][base]) } />)}
+							{ names.map(k => <a href={ `/${palette}/${k}` } className={{ active: k===color }} style={ bg(colors[k][base]) } />)}
 						</nav>
 
 						<ul id="color" ref={ el => {elm = el} }>
