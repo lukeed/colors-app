@@ -12,7 +12,7 @@
   "scripts": {
     "build": "fly build release",
     "deploy": "npm run build && now release",
-    "start": "serve release -s",
+    "start": "serve release --single",
     "watch": "fly build watch"
   },
   "engines": {

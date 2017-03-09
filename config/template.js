@@ -12,13 +12,13 @@ module.exports = semver => ({
 		url: 'https://lukeed.com'
 	},
 	scripts: {
-		start: 'serve -s'
+		start: 'serve --single'
 	},
 	dependencies: {
 		'serve': '^4.0.0'
 	},
 	now: {
 		name: 'colors',
-		alias: 'colors'
+		alias: 'colors.now.sh'
 	}
 });
