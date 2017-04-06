@@ -29,8 +29,10 @@ export default class Switcher extends Component {
 	}
 
 	render({ selected }, { open }) {
+		let cls = 'modal';
+		open && (cls += ' open');
 		return (
-			<div className={{ modal:true, open }}>
+			<div className={ cls }>
 				<div className="modal__overlay" onClick={ this.hide } />
 
 				<div className="modal__content">

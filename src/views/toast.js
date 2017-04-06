@@ -23,7 +23,7 @@ export default class Toast extends Component {
 
 	render(_, { open }) {
 		return (
-			<div id="toast" className={{ open }}>Copied!</div>
+			<div id="toast" className={ open ? 'open' : '' }>Copied!</div>
 		);
 	}
 }
