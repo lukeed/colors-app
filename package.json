@@ -21,7 +21,7 @@
   "dependencies": {
     "md-colors": "^1.0.0",
     "preact": "beta",
-    "preact-router": "^2.4.1"
+    "preact-router": "^2.4.2"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
