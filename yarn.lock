@@ -492,6 +492,12 @@ clipboardy@1.0.2:
   dependencies:
     execa "^0.6.0"
 
+clipboardy@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/clipboardy/-/clipboardy-1.1.0.tgz#e060337afad251fce05456d83dd3a5d6dcb3fa6b"
+  dependencies:
+    execa "^0.6.0"
+
 cliui@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -987,9 +993,9 @@ fly-precache@^2.1.0:
     sw-precache "^2.3.0"
     sw-toolbox "^3.1.1"
 
-fly-rev@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/fly-rev/-/fly-rev-2.2.1.tgz#5960ebf8d89c217717a7da08cab716ec3fbed626"
+fly-rev@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/fly-rev/-/fly-rev-2.2.3.tgz#dbf7f954a5066c7143c3eafa57d90516b6c6746c"
   dependencies:
     rev-hash "^1.0.0"
     sort-keys "^1.1.1"
@@ -2733,16 +2739,16 @@ serve-static@1.11.1:
     parseurl "~1.3.1"
     send "0.14.1"
 
-serve@^5.1.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/serve/-/serve-5.1.2.tgz#d8ed66f54e037184dd413a5b99761674860d7e08"
+serve@^5.1.3:
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/serve/-/serve-5.1.3.tgz#8a7d56f2ae56e40eccb10023c19a3edadc676234"
   dependencies:
     args "2.4.1"
     basic-auth "1.1.0"
     bluebird "3.5.0"
     boxen "1.0.0"
     chalk "1.1.3"
-    clipboardy "1.0.2"
+    clipboardy "1.1.0"
     dargs "5.1.0"
     detect-port "1.1.1"
     filesize "3.5.6"
