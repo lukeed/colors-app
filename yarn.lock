@@ -2348,13 +2348,13 @@ postcss@^5.0.4, postcss@^5.2.16:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-preact-router@^2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-2.4.3.tgz#552a928fbc5c4bd031b88bd24385ffa9b2b52835"
+preact-router@^2.4.5:
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-2.4.5.tgz#48f0274c7cd56052257489269dafcfd6984763d8"
 
-preact@beta:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-8.0.1.tgz#77ab1d4a4858495e23dc33aa85c0d60985341301"
+preact@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-8.1.0.tgz#f035b808eebb74e46d56246b02ca0f190b6d6574"
 
 prepend-http@^1.0.1:
   version "1.0.4"

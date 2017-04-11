@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "md-colors": "^1.0.0",
-    "preact": "beta",
-    "preact-router": "^2.4.3"
+    "preact": "^8.1.0",
+    "preact-router": "^2.4.5"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
