@@ -41,9 +41,7 @@ export async function release(fly) {
 	// minify js
 	await fly.source(`${tar}/js/*`).uglify(cUgly).target(`${tar}/js`);
 	// version assets
-	await fly.source(`${tar}/**/*`).rev({
-		ignores: ['.html', '.png', '.svg', '.ico', '.json', '.txt']
-	}).revManifest({dest: rel, trim: tar}).revReplace().target(rel);
+	await fly.source(`${tar}/**/*`).rev().revManifest({dest: rel, trim: tar}).revReplace().target(rel);
 	// remove `rev-manifest.json` (no need)
 	await fly.clear(`${rel}/rev-manifest.json`);
 	// minify html
