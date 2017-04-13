@@ -19,6 +19,7 @@
     "node": ">= 4.6.0"
   },
   "dependencies": {
+    "animejs": "^2.0.2",
     "md-colors": "^1.0.0",
     "preact": "^8.1.0",
     "preact-router": "^2.4.5"
