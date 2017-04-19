@@ -13,11 +13,16 @@ const src = {
 	js: 'src/index.js',
 	css: 'src/index.sass',
 	copy: ['src/static/**/*.*', 'src/*.html'],
-	watch: { js:'src/**/*.js', css:'src/**/*.sass' }
+	watch: { js:'src/**/*.js', css:'src/**/*.sass' },
+	vendor: [`${node}/animejs/anime.min.js`]
 };
 
 export async function copies(fly, o) {
 	await fly.source(o.src || src.copy).target(tar);
+}
+
+export async function vendor(fly) {
+	await fly.source(src.vendor).concat('vendor.js').target(`${tar}/js`);
 }
 
 let conf;
@@ -34,7 +39,7 @@ export async function styles(fly) {
 }
 
 export async function build(fly) {
-	await fly.clear([tar, rel]).parallel(['copies', 'scripts', 'styles']);
+	await fly.clear([tar, rel]).parallel(['vendor', 'copies', 'scripts', 'styles']);
 }
 
 export async function release(fly) {

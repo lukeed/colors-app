@@ -5,6 +5,7 @@ import Switcher from './Switcher';
 import schemes from '../colors';
 import Toaster from './toast';
 import Shade from './shade2';
+import Anim from './anim';
 import Top from './top';
 
 const modes = ['hex', 'rgb', 'hsl'];
@@ -88,6 +89,8 @@ export default class App extends Component {
 				<Toaster />
 
 				<Switcher selected={ palette } onSelect={ this.setPalette } />
+
+				<Anim palette={ palette } />
 			</div>
 		);
 	}

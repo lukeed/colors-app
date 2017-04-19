@@ -14,7 +14,7 @@ export default class Toast extends Component {
 	}
 
 	componentDidMount() {
-		on('copied', this.show);
+		on('toast', this.show);
 	}
 
 	shouldComponentUpdate(_, state) {

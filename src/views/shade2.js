@@ -12,8 +12,9 @@ function copy(text) {
 }
 
 function handle(e) {
-	copy(e.target.lastChild.textContent);
-	emit('copied'); // show toast
+	const color = e.target.lastChild.textContent;
+	emit('copied', { color, x:e.x, y:e.y });
+	copy(color);
 }
 
 export default ({ idx, hex, format }) => {
