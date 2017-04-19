@@ -94,23 +94,15 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.0 || ^1.1.13"
 
-args@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/args/-/args-2.4.0.tgz#2e6d5616d4ddbc943d5f1fc1ce2128f9d018f69b"
+args@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/args/-/args-2.6.0.tgz#5f2b310a4831f1181a7bf0d92f81aed32b538eb4"
   dependencies:
-    camelcase "4.0.0"
+    camelcase "4.1.0"
     chalk "1.1.3"
     minimist "1.2.0"
     pkginfo "0.4.0"
-
-args@2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/args/-/args-2.4.1.tgz#e409e5d73eaf1185b7b29acb3cc41e3b650dea77"
-  dependencies:
-    camelcase "4.0.0"
-    chalk "1.1.3"
-    minimist "1.2.0"
-    pkginfo "0.4.0"
+    string-similarity "1.1.0"
 
 arr-diff@^2.0.0:
   version "2.0.0"
@@ -430,9 +422,9 @@ camelcase-keys@^2.0.0:
     camelcase "^2.0.0"
     map-obj "^1.0.0"
 
-camelcase@4.0.0, camelcase@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.0.0.tgz#8b0f90d44be5e281b903b9887349b92595ef07f2"
+camelcase@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
 camelcase@^1.0.2, camelcase@^1.2.1:
   version "1.2.1"
@@ -445,6 +437,10 @@ camelcase@^2.0.0:
 camelcase@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
+
+camelcase@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.0.0.tgz#8b0f90d44be5e281b903b9887349b92595ef07f2"
 
 caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000649"
@@ -503,12 +499,6 @@ clean-css@4.0.x:
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
-
-clipboardy@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/clipboardy/-/clipboardy-1.0.2.tgz#4772407d73a894a41813fa020ce1c501aa6bbdcc"
-  dependencies:
-    execa "^0.6.0"
 
 clipboardy@1.1.0:
   version "1.1.0"
@@ -1196,6 +1186,10 @@ generate-object-property@^1.1.0:
 get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
+
+get-port@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/get-port/-/get-port-3.1.0.tgz#ef01b18a84ca6486970ff99e54446141a73ffd3e"
 
 get-stdin@^4.0.1:
   version "4.0.1"
@@ -1904,7 +1898,7 @@ lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0:
+lodash@^4.0.0, lodash@^4.13.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -1989,17 +1983,17 @@ micro-compress@1.0.0:
   dependencies:
     compression "^1.6.2"
 
-micro@7.3.0:
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/micro/-/micro-7.3.0.tgz#31e6174ae44968964a770724f2ce488e99a8a652"
+micro@7.3.2:
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/micro/-/micro-7.3.2.tgz#c6ff82fad6b045cfe04cbc673834ef1fc3dc13aa"
   dependencies:
-    args "2.4.0"
+    args "2.6.0"
     async-to-gen "1.3.2"
     bluebird "3.5.0"
     boxen "1.0.0"
     chalk "1.1.3"
-    clipboardy "1.0.2"
-    detect-port "1.1.1"
+    clipboardy "1.1.0"
+    get-port "3.1.0"
     ip "1.1.5"
     is-async-supported "1.2.0"
     isstream "0.1.2"
@@ -2464,9 +2458,9 @@ postcss@^5.0.4, postcss@^5.2.16:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-preact-router@^2.4.5:
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-2.4.5.tgz#48f0274c7cd56052257489269dafcfd6984763d8"
+preact-router@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-2.5.1.tgz#e471b4ecbc35e0bcd0f9da270e0c57be82616249"
 
 preact@^8.1.0:
   version "8.1.0"
@@ -2862,11 +2856,11 @@ serve-static@1.11.1:
     parseurl "~1.3.1"
     send "0.14.1"
 
-serve@^5.1.3:
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/serve/-/serve-5.1.3.tgz#8a7d56f2ae56e40eccb10023c19a3edadc676234"
+serve@^5.1.4:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/serve/-/serve-5.1.4.tgz#acbb5a96fbce87a1add9b911a9dc8cd5b172c600"
   dependencies:
-    args "2.4.1"
+    args "2.6.0"
     basic-auth "1.1.0"
     bluebird "3.5.0"
     boxen "1.0.0"
@@ -2878,7 +2872,7 @@ serve@^5.1.3:
     fs-promise "2.0.2"
     handlebars "4.0.6"
     ip "1.1.5"
-    micro "7.3.0"
+    micro "7.3.2"
     micro-compress "1.0.0"
     mime-types "2.1.15"
     node-version "1.0.0"
@@ -3053,6 +3047,12 @@ stream-throttle@^0.1.3:
   dependencies:
     commander "^2.2.0"
     limiter "^1.0.5"
+
+string-similarity@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/string-similarity/-/string-similarity-1.1.0.tgz#3c66498858a465ec7c40c7d81739bbd995904914"
+  dependencies:
+    lodash "^4.13.1"
 
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
