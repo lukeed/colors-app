@@ -40,8 +40,8 @@ export default class App extends Component {
 		};
 
 		this.onRoute = ({ previous, url }) => {
-			if (process.env.NODE_ENV === 'production' && window.ga) {
-				ga('send', 'pageview', url);
+			if (window.ga) {
+				ga.send('pageview');
 			}
 
 			// where are we?

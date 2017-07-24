@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "animejs": "^2.0.2",
+    "ganalytics": "^1.0.0",
     "md-colors": "^1.0.0",
     "preact": "^8.1.0",
     "preact-router": "^2.5.1"
