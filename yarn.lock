@@ -1158,9 +1158,9 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     mkdirp ">=0.5 0"
     rimraf "2"
 
-ganalytics@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ganalytics/-/ganalytics-1.0.0.tgz#17f95ca08d66e6974bc1ac862e0de29e594290d3"
+ganalytics@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ganalytics/-/ganalytics-2.0.1.tgz#bbddf6449a5789b2efee7a88e9942216bc5eedab"
 
 gauge@~2.7.3:
   version "2.7.4"
